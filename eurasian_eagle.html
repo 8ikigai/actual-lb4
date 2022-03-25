@@ -10,6 +10,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
         <link rel="icon" href="img/icon_bw1.png">
         <link rel="stylesheet" href="style.css">
+
+        <SCript>
+            function change_color(id){
+                let r = Math.random()*(255);
+                let g = Math.random()*(255);
+                let b = Math.random()*(255);
+                let color = 'rgb(' + r +', ' +g + ', ' +b + ')'
+                document.getElementById(id).style.background =  'radial-gradient(closest-side, '+color+', #EC87E4,  #ebf8e1)';
+            }
+        </SCript>
     </head>
     <body>
             
@@ -28,7 +38,7 @@
             <div ><a class="with-transition" href="tawny.html">Tawny owl</a> </div>
             <div ><a class="with-transition" href="rufous.html">Rufous fishing owl</a></div>
         </nav>
-        <article class="with-transition" style="margin: 15px; padding: 2em; border: #EC87E4 solid; border-radius: 5em;">
+        <article id="article" class="with-transition" style="margin: 15px; padding: 2em; border: #EC87E4 solid; border-radius: 5em;">
             <p style="font-size: larger;">Eurasian eagle owl</p> 
             
             The Eurasian eagle-owl (Bubo bubo) is a species of eagle-owl that resides in much of Eurasia. It is also called the Uhu and it is occasionally 
@@ -48,4 +58,7 @@
             </center>
         </footer> 
     </body>
+    <script>
+        change_color('article')
+    </script>
 </html>

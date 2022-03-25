@@ -7,8 +7,21 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@500&display=swap" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-        
         <link rel="stylesheet" href="style.css">
+        <SCript>
+            function change_color(id){
+                let r = Math.random()*(255);
+                let g = Math.random()*(255);
+                let b = Math.random()*(255);
+                let color = 'rgb(' + r +', ' +g + ', ' +b + ')'
+                document.getElementById(id).style.background =  'linear-gradient(0.5turn, #D3FBD8, '+color+')';
+            }
+            function rand_link(arrOBJ){
+                lnkIndx = Math.round(Math.random()*(3));
+                lnk= '<a id="' + arrOBJ[lnkIndx].style + '" href="' + arrOBJ[lnkIndx].link + '">' + arrOBJ[lnkIndx].title + '</a>';
+                return lnk
+            }
+        </SCript>
     </head>
     <body>
         <div id="page-container">
@@ -19,7 +32,7 @@
                     </div>
                 </center>
 
-                <article class="with-transition" style="margin-left: 20px; margin-right: 20px; margin-top: 50px; padding: 1.5em; border: #EC87E4 solid; border-radius: 5em;">  
+                <article id="article" class="with-transition" style="margin-left: 20px; margin-right: 20px; margin-top: 50px; padding: 1.5em; border: #EC87E4 solid; border-radius: 5em;">  
                     <p>
                         Owls are birds from the order Strigiformes (/ˈstrɪdʒəfɔːrmiːz/),
                         which includes over 200 species of mostly solitary and nocturnal birds 
@@ -64,7 +77,7 @@
                     </div>
                 
                 </div>
-        
+                
                 <nav  id="menucontainer">
                     
                     <figure ">
@@ -80,12 +93,14 @@
                     <figure>
                         <img src="img/tawny.jpg" alt="">
                         <figcaption> <a class="with-transition" href="tawny.html">Tawny owl</a> </figcaption>
+                        
                     </figure>
                     <figure>
                         <img src="img/furious.jpg" alt="">
-                        <figcaption> <a class="with-transition" href="tawny.html">Rufous fishing owl</a> </figcaption>
+                        <figcaption> <a class="with-transition" href="rufous.html">Rufous fishing owl</a> </figcaption>
                     </figure>
                 </nav>
+                
             </div>
         
 
@@ -98,6 +113,41 @@
                     </section>
                 </center>
             </footer> 
+            
         </div>
+        <script>
+            change_color('footer')
+        </script>
+        <script>
+                    
+            var arrObjects = [];
+            
+
+            arrObjects[0] = {
+                link: "barn.html",
+                style: "a0",
+                title: "barn"
+            }
+            arrObjects[1] = {
+                link: "eurasian_eagle.html",
+                style: "a1",
+                title: "eurasian"
+            }
+            arrObjects[2] = {
+                link: "tawny.html",
+                style: "a2",
+                title: "tawny"
+            }
+            arrObjects[3] = {
+                link: "rufous.html",
+                style: "a3",
+                title: "rufous"
+            }
+            a_html= rand_link(arrObjects);
+            let p = document.createElement("p")
+            p.innerHTML = a_html;
+            document.getElementById('article').appendChild(p)
+        </script>
+        
     </body>
 </html>
