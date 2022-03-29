@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Owls</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" href="img/icon.png">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@500&display=swap" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <link rel="icon" href="img/icon_bw1.png">
+        <link rel="stylesheet" href="style.css">
+
+        <SCript>
+            class tble{
+                name;
+                #data;
+                #colmnsN;
+                #rowsN;
+                constructor (tableName){
+                    this.name = tableName
+                    this.#data = []
+                }
+                add_data(param,value){
+                    this.#data[this.#data.length]={
+                        param : value
+                    }
+                }
+            }
+        </SCript>
+    </head>
+    <body>
+            
+        <center>
+            <div class="rotating" style=" margin: 20px; width: 200px; height: 200px; line-height: 100px;"> 
+                <a href="owls.html"> <img src="img/logo2.png" style="width: 200px;" alt=""></a>
+            </div>
+        </center>
+        
+        <nav class="slideright"  id="menucontainer"  flex-wrap: wrap;"> 
+            <div ><a class="with-transition" href="barn.html">Barn owl</a>   </div>
+                   
+            <div >
+                <a class="with-transition" href="eurasian_eagle.html">Eurasian eagle-owl</a>
+            </div>
+            <div ><a class="with-transition" href="tawny.html">Tawny owl</a> </div>
+            <div ><a class="with-transition" href="rufous.html">Rufous fishing owl</a></div>
+        </nav>
+        
+        <footer id="footer"">
+            <center>
+            <section>
+                <img  src="img/icon_bw1.png" alt=""> 
+                <div style="color: #D3FBD8;">
+                <strong>e-mail: </strong> audubonmagazine@audubon.org </div>
+                </section>
+            </center>
+        </footer> 
+    </body>
+    <script>
+        change_color('article')
+    </script>
+</html>
