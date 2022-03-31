@@ -1,21 +1,41 @@
+class table {
 
-
-class tble{
-    name;
     #data;
-    #colmnsN;
-    #rowsN;
-    constructor (tableName){
-        this.name = tableName
+    headerData;
+    #tableHtml;
+    constructor(){
         this.#data = []
+        this.#tableHtml =''
     }
-    add_data(param,value){
-        this.#data[this.#data.length]={
-            param : value
+    insert(...theArgs) {
+        this.#data.push([]);
+        for ( const cell of theArgs){
+            this.#data[this.#data.length - 1].push(cell);
         }
+    }
+
+    createHtml(){
+        this.#tableHtml = "<table>"
+        for (const row of this.#data){
+            this.#tableHtml+='<tr>'
+
+            for (let step = 0; step < row.length ; step++){
+                let cell = row[step];
+                this.#tableHtml = this.#tableHtml + "<th>" + cell + "</th>"
+            }
+            
+            this.#tableHtml += "</tr>"
+        }
+
+        this.#tableHtml += "</table>"
+        return this.#tableHtml
     }
 }
 
-table = tble('classs');
-table.add_data('ehn', 'djikdf');
-console.log('dd')
+let tble = new table();
+tble.insert('Kingdom', 'Animalia');
+tble.insert('Phylum', 'Chordata');
+tble.insert('Class', 'Aves');
+tble.insert('Clade', 'Telluraves');
+tble.insert('Order', 'Strigiformes');
+strr = tble.createHtml()

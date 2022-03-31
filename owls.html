@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@500&display=swap" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
         <link rel="stylesheet" href="style.css">
-        <SCript>
+        <SCript src="code.js">
             function change_color(id){
                 let r = Math.random()*(255);
                 let g = Math.random()*(255);
@@ -21,6 +21,40 @@
                 lnk= '<a id="' + arrOBJ[lnkIndx].style + '" href="' + arrOBJ[lnkIndx].link + '">' + arrOBJ[lnkIndx].title + '</a>';
                 return lnk
             }
+            class table {
+
+            #data;
+            headerData;
+            #tableHtml;
+            constructor(){
+                this.#data = []
+                this.#tableHtml =''
+            }
+            insert(...theArgs) {
+                this.#data.push([]);
+                for ( const cell of theArgs){
+                    this.#data[this.#data.length - 1].push(cell);
+                }
+            }
+
+            createHtml(){
+                this.#tableHtml = "<table>"
+                for (const row of this.#data){
+                    this.#tableHtml+='<tr>'
+
+                    for (let step = 0; step < row.length ; step++){
+                        let cell = row[step];
+                        this.#tableHtml = this.#tableHtml + "<th>" + cell + "</th>"
+                    }
+                    
+                    this.#tableHtml += "</tr>"
+                }
+
+                this.#tableHtml += "</table>"
+                return this.#tableHtml
+            }
+}
+            
         </SCript>
     </head>
     <body>
@@ -32,7 +66,7 @@
                     </div>
                 </center>
 
-                <article id="article" class="with-transition" style="margin-left: 20px; margin-right: 20px; margin-top: 50px; padding: 1.5em; border: #EC87E4 solid; border-radius: 5em;">  
+                <article id="articlee" class="with-transition" style="margin-left: 20px; margin-right: 20px; margin-top: 50px; padding: 1.5em; border: #EC87E4 solid; border-radius: 5em;">  
                     <p>
                         Owls are birds from the order Strigiformes (/ˈstrɪdʒəfɔːrmiːz/),
                         which includes over 200 species of mostly solitary and nocturnal birds 
@@ -68,6 +102,7 @@
             
                         A group of owls is called a "parliament"
                     </p>
+                    <!-- <table><tr><th>Kingdom</th><th>Animalia</th></tr><tr><th>Phylum</th><th>Chordata</th></tr><tr><th>Class</th><th>Aves</th></tr><tr><th>Clade</th><th>Telluraves</th></tr><tr><th>Order</th><th>Strigiformes</th></tr></table> -->
                 </article>
 
                 <div  style="height: 70px; overflow: hidden;"> 
@@ -144,9 +179,18 @@
                 title: "rufous"
             }
             a_html= rand_link(arrObjects);
-            let p = document.createElement("p")
+            let p = document.createElement("p");
             p.innerHTML = a_html;
-            document.getElementById('article').appendChild(p)
+            document.getElementById('articlee').appendChild(p);
+            // let tble = new table();
+            // tble.insert('Kingdom', 'Animalia');
+            // tble.insert('Phylum', 'Chordata');
+            // tble.insert('Class', 'Aves');
+            // tble.insert('Clade', 'Telluraves');
+            // tble.insert('Order', 'Strigiformes');
+            // let pTable = document.createElement("pTable");
+            // pTable.innerHTML = tble.createHtml();
+            // document.getElementById('article').appendChild(pTable);
         </script>
         
     </body>
