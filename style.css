@@ -268,3 +268,11 @@ a.with-transition { transition: 0.7s; }
     100% { transform: translate(0, 0); }
     }
 .email_tr { animation: translating 4s linear infinite; }
+
+table{
+    margin-left: 20px;
+
+    border: hidden;
+    border-radius: 1em;
+    text-align: left;   
+}

@@ -9,6 +9,42 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
         
         <link rel="stylesheet" href="style.css">
+
+        <script>
+            class table {
+
+                #data;
+                headerData;
+                #tableHtml;
+                constructor(){
+                    this.#data = []
+                    this.#tableHtml =''
+                }
+                insert(...theArgs) {
+                    this.#data.push([]);
+                    for ( const cell of theArgs){
+                        this.#data[this.#data.length - 1].push(cell);
+                    }
+                }
+
+                createHtml(){
+                    this.#tableHtml = "<table>"
+                    for (const row of this.#data){
+                        this.#tableHtml+='<tr>'
+
+                        for (let step = 0; step < row.length ; step++){
+                            let cell = row[step];
+                            this.#tableHtml = this.#tableHtml + "<th>" + cell + "</th>"
+                        }
+                        
+                        this.#tableHtml += "</tr>"
+                    }
+
+                    this.#tableHtml += "</table>"
+                    return this.#tableHtml
+                }
+                }
+        </script>
     </head>
     <body>
         <div id="page-container">
@@ -19,7 +55,7 @@
                     </div>
                 </center>
 
-                <article class="with-transition" style="margin-left: 20px; margin-right: 20px; margin-top: 50px; padding: 1.5em; border: #EC87E4 solid; border-radius: 5em;">  
+                <article id="art" class="with-transition" style="margin-left: 20px; margin-right: 20px; margin-top: 50px; padding: 1.5em; border: #EC87E4 solid; border-radius: 5em;">  
                     <p>
                         Owls are birds from the order Strigiformes (/ˈstrɪdʒəfɔːrmiːz/),
                         which includes over 200 species of mostly solitary and nocturnal birds 
@@ -55,7 +91,20 @@
             
                         A group of owls is called a "parliament"
                     </p>
+                    <script>
+                        let tble = new table();
+                        tble.insert('Kingdom:', 'Animalia');
+                        tble.insert('Phylum:', 'Chordata');
+                        tble.insert('Class:', 'Aves');
+                        tble.insert('Clade:', 'Telluraves');
+                        tble.insert('Order:', 'Strigiformes');
+                        strr = tble.createHtml()
+                        document.write(strr)
+                
+                    </script>
                 </article>
+               <section id="tablee" style="margin: 20000 px;">
+                </section>
 
                 <div  style="height: 70px; overflow: hidden;"> 
                     <h2  style=" color: #EC87E4; margin-left: 15px; float: left;">Breeds</h2>
@@ -64,7 +113,7 @@
                     </div>
                 
                 </div>
-        
+                
                 <nav  id="menucontainer">
                     
                     <figure ">
@@ -87,7 +136,7 @@
                     </figure>
                 </nav>
             </div>
-        
+            
 
             <footer id="footer"">
                 <center>
@@ -99,5 +148,7 @@
                 </center>
             </footer> 
         </div>
+    
     </body>
+    
 </html>
