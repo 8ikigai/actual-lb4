@@ -1,10 +1,15 @@
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Noto Serif Display', serif;
     font-size: large;
     width: 100%;
-    height: auto;
     background: #D3FBD8;
-    margin: 0px;
+    margin: 0%;
+
+    min-height: 100%;
 }
 
 #page-container {
@@ -21,7 +26,13 @@ body {
     width: 100%;    /* Footer height */
 }
 
+
 @media (min-width: 900px){
+    #page-footer {
+        display: block;
+            position: top;
+        height: calc(95vh - 2.5em);
+    }
     #menucontainer {
         width: 97%;
         display: flex;
@@ -48,8 +59,8 @@ body {
         text-align: center;
     }
     #footer {
-        position: absolute;
-        bottom: 0;
+        display: block;
+        position: BOTTOM;
         background: linear-gradient(0.5turn, #D3FBD8, #EC87E4); 
         padding: 10px;  
         height: 2.5rem;
@@ -110,11 +121,11 @@ article{
     font-size:  medium;
 }
 
-article:hover{
+/* article:hover{
 
     background: radial-gradient(closest-side, #D3FBD8, #ebf8e1, #EC87E4);
     font-size: smaller;
-}    
+}     */
 
 article.with-transition { transition: 2s; }
 
