@@ -1,0 +1,23 @@
+{
+  "name": "actual-lb4",
+  "version": "1.0.0",
+  "description": "lb4 for lb9",
+  "main": "owls.js",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8ikigai/actual-lb4.git"
+  },
+  "keywords": [],
+  "author": "8ikigai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/8ikigai/actual-lb4/issues"
+  },
+  "homepage": "https://github.com/8ikigai/actual-lb4#readme",
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
