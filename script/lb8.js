@@ -1,3 +1,4 @@
+// Data for pages preview
 const owls = [
     {
         owl: 'Barn owl',
