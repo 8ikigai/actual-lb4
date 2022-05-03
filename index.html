@@ -61,8 +61,9 @@
                         
             
                         A group of owls is called a "parliament"
+                        
                     </p>
-                    <form style="display: flex;">
+                    <form style="display: flex; flex-wrap: wrap;" >
                         <label for="fname">Owl name:</label><br>
                         <input type="text" id="owl_name" name="fname"><br>
                         <label for="lname">Scientific name:</label>
@@ -71,7 +72,7 @@
                         <input type="text" id="mass" name="mass"><br><br>
                         <label for="lname">Height:</label>
                         <input type="text" id="height" name="height"><br><br>
-                        <input id="submitTable" type="submit" value="Submit" ">
+                        <input id="submitTable" type="submit" value="Submit" onclick="addInfo(); return false;">
                       </form> 
                     <script>
                         let tble = new table();
@@ -85,16 +86,18 @@
                 
                     </script>
 
-                    <table id ='test' style="border: 1px solid;">
-                        <tr>
-                            <td>fdhfskjdhfk</td>
-                            <td>dfsdf</td>
-                            <td>dddd</td>
-                            <td>dskfhd</td>
+                    <table id ='testtt' style="border: 1px solid; padding: 0.5em;">
+                        <tr >
+                            <th>Owl name</th>
+                            <th>Scientific name</th>
+                            <th>Mass</th>
+                            <th>Height</th>
                         </tr>
                     </table>
                 </article>
-               
+               <div id="testingg">
+                    ixk∂ç˙sn
+               </div>
 
                 <div  style="height: 70px; overflow: hidden;"> 
                     <h2  style=" color: #EC87E4; margin-left: 15px; float: left;">Breeds</h2>
@@ -147,7 +150,7 @@
 
             <footer id="footer"">
                 <center>
-                <section>
+                <section
                     <img  src="img/icon_bw1.png" alt=""> 
                     <div id="email">
                     <strong>e-mail: </strong> audubonmagazine@audubon.org </div>
@@ -159,11 +162,19 @@
     </body>
     <script>
 
-        
+     
+
+
         showPreview()
         var owlData = []
+        var row = document.createElement('tr')
+
+
         setTimeout(adOpen, 15000);
         setInterval(showPreview, 12000);
-        document.getElementById('submitTable').addEventListener('click', addInfo.bind(owlData), false)
+        console.log(owlData)
+    console.log(owlData[0].name)
+        
+
     </script>
 </html>

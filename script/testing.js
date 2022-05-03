@@ -31,6 +31,7 @@ function addInfo(owls){
         mass : '5446', 
         height : '5151515'
     }
+    console.log(owl)
     owls.push(owl)
        
 }
@@ -39,5 +40,4 @@ function addInfo(owls){
 
 var owlss = []
 addInfo(owlss)
-console.log(owlss[0].sc_name)
-console.log(Object.keys(owlss[0]).length)
+console.log(owlss[0])

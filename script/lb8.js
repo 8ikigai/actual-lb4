@@ -69,36 +69,52 @@ function adOpen(){
 //     }
 // }
 
-function tblee(owls){
+function tblee(){
     alert('helooooo')
-    // creating row
-    let row = document.createElement('tr')
+    let indx = owlData.length - 1
+    // gettin table link
+    let tableRef = document.getElementById('testtt')
 
-    //gettin row length
-    let k = 4
-    cell =  document.createElement('td');
-    cell.innerText=owlss[0].name
-    row.appendChild(cell)
-    cell =  document.createElement('td');
-    cell.innerText=owlss[0].sc_name
-    row.appendChild(cell)
-    cell =  document.createElement('td');
-    cell.innerText=owlss[0].mass
-    row.appendChild(cell)
-    cell =  document.createElement('td');
-    cell.innerText=owlss[0].height
-    row.appendChild(cell)
-    document.getElementById('test').appendChild(row)
+    // Creating new row
+    let newRow = tableRef.insertRow(-1);
+
+    let cell =  newRow.insertCell(0);
+    let newText = document.createTextNode(owlData[indx].name);
+    cell.appendChild(newText);
+
+    cell =  newRow.insertCell(1);
+    newText = document.createTextNode(owlData[indx].sc_name);
+    cell.appendChild(newText);
+
+
+    cell =  newRow.insertCell(2);
+    newText = document.createTextNode(owlData[indx].mass);
+    cell.appendChild(newText);
+
+
+    cell =  newRow.insertCell(3);
+    newText = document.createTextNode(owlData[indx].height);
+    cell.appendChild(newText);
+
+
 }
 
-function addInfo(owls){
-    let owl = {
+
+function tUpdate(){
+
+}
+function addInfo(){
+    let owll = {
         name : document.getElementById('owl_name').value,
         sc_name : document.getElementById('sc_name').value,
         mass : document.getElementById('mass').value, 
         height : document.getElementById('height').value
     }
-    owls.push(owl)
     
-    alert(owls[0].name)
+    owlData.push(owll)
+
+    console.log(owlData)
+    console.log(owlData[0].name)
+    alert("ujtgrif")
+    tblee();
 }
