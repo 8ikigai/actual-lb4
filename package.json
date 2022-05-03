@@ -1,5 +1,5 @@
 {
-  "name": "actual-lb4",
+  "name": "lbv8lb",
   "version": "1.0.0",
   "description": "lb4 for lb9",
   "main": "owls.js",
@@ -19,5 +19,6 @@
   "homepage": "https://github.com/8ikigai/actual-lb4#readme",
   "dependencies": {
     "express": "^4.18.0"
-  }
+  },
+  "devDependencies": {}
 }

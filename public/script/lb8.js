@@ -48,29 +48,8 @@ function adOpen(){
     document.getElementById('popup-ad').style.opacity = 1;
 }
 
-// class Owl{
-//     #fname;
-//     #scnt_name;
-//     #mass;
-//     #height;
-//     constructor(fname, scntfc_name, mass, height){
-//         this.#fname = fname;
-//         this.#height = height;
-//         this.#mass = mass;
-//         this.scntfc_name = scntfc_name;
-//     }
-// }
-// class tblData{
-//     wholeData;
-//     headerCells;
-//     constructor(fname, scntfc_name, mass, height){
-//         this.headerCells = []
-//         this.headerCells.push(fname, scntfc_name, mass, height)
-//     }
-// }
 
 function tblee(){
-    alert('helooooo')
     let indx = owlData.length - 1
     // gettin table link
     let tableRef = document.getElementById('testtt')
@@ -100,9 +79,6 @@ function tblee(){
 }
 
 
-function tUpdate(){
-
-}
 function addInfo(){
     let owll = {
         name : document.getElementById('owl_name').value,
@@ -113,8 +89,6 @@ function addInfo(){
     
     owlData.push(owll)
 
-    console.log(owlData)
-    console.log(owlData[0].name)
-    alert("ujtgrif")
+
     tblee();
 }
